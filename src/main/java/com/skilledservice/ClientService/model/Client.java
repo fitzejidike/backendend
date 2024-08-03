@@ -14,6 +14,7 @@ import lombok.Setter;
 public class Client{
     @Id
     private Long clientId;
+    private String password;
     @OneToOne
     private User user;
 
