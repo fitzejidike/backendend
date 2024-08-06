@@ -20,8 +20,4 @@ public class MapperConfig {
                 .setPropertyCondition(isNotNull());
         return modelMapper;
     }
-    @Bean
-    public PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
     }
-}

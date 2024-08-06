@@ -9,7 +9,10 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
+
+import static jakarta.persistence.GenerationType.IDENTITY;
 import static java.time.LocalDateTime.now;
 
 @Entity
@@ -20,6 +23,7 @@ import static java.time.LocalDateTime.now;
 //@DiscriminatorValue("not null")
 public class User {
     @Id
+    @GeneratedValue(strategy = IDENTITY)
     private Long id;
     private String firstName;
     private String lastName;
@@ -36,6 +40,8 @@ public class User {
     private LocalDateTime timeUpdated;
     @OneToOne
     private Address address;
+    @OneToMany
+    private List<Appointment> appointment;
 
     @Enumerated(EnumType.STRING)
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)

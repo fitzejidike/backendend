@@ -4,6 +4,7 @@ import com.skilledservice.ClientService.model.Address;
 import com.skilledservice.ClientService.model.Role;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Setter
 @Getter

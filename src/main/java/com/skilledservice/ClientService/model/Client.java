@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -20,6 +22,8 @@ public class Client{
 
     @OneToOne
     private Admin admin;
+    @OneToMany
+    private List<Appointment>appointments;
 
 
 //    @Service
